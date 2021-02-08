@@ -12,12 +12,12 @@ export const LoginScreen = ({history}) => {
     console.log('logged => ',logged)    
 
     const handleLogin = () => {
-        
+        const lastPath = localStorage.getItem('lastPath') || '/'
         dispatch({
             type: types.login,
             payload: {name:'Fernando'}
         })
-        history.replace('/');
+        history.replace(lastPath);
     }
     return (
         <div className="container mt-5">
